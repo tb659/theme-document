@@ -2,7 +2,6 @@
   主题所有变量
 */
 :root {
-
   /*基础样式变量*/
   --theme-text-super-mini: 0.4rem;
   --theme-text-mini: 0.76rem;
@@ -21,10 +20,10 @@
   --theme-white: #f5f7fd;
   --theme-black: #333;
   --theme-color: #3eaf7c;
-  --theme-color-20: #{rgba(#42b983,.20)};
+  --theme-color-20: #{rgba(#42b983, 0.2)};
   --theme-text-color: #262626;
-  --theme-text-secondary: #{rgba(#000000,0.65)};
-  --theme-text-mini-color: #{rgba(#000000,0.65)};
+  --theme-text-secondary: #{rgba(#000000, 0.65)};
+  --theme-text-mini-color: #{rgba(#000000, 0.65)};
 
   --theme-margin-bottom: 1rem;
   --theme-margin-bottom-max: 1.1rem;
@@ -42,7 +41,7 @@
 
   --theme-hover-bg: #444;
   --theme-hover-color: white;
-  --theme-hover-shadow: #{rgba(#000000,0.1)};
+  --theme-hover-shadow: #{rgba(#000000, 0.1)};
   --theme-code-bg: #eeeeee;
   --theme-code-text: #4e6e8e;
 
@@ -67,7 +66,6 @@
   --theme-secondary-index-title: 0.78rem;
   --theme-third-index-title: 0.78rem;
 
-
   /*代码块样式*/
   --theme-pre-code-bg: #f7f7f7;
   --theme-pre-code-shadow: #fff;
@@ -82,7 +80,6 @@
   --theme-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.22);
   --theme-placeholder: #a4a4a4;
 }
-
 
 .theme-one {
   --theme-color: #f5222d !important;
@@ -115,7 +112,3 @@
 .theme-eight {
   --theme-color: #eb2f96 !important;
 }
-
-
-/* 变量 */
-$box-shadow: 0 2px 10px 3px rgba(0, 0, 0, 0.15);

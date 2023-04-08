@@ -20,52 +20,51 @@ $sql = 'select sum(`meta_value`+0) As views from `' . $table_prefix . 'postmeta`
 $result = $wpdb->get_results($sql, ARRAY_A);
 $views = $result[0]['views']; //总阅读数
 
-$comment = count(get_comments());//评论总数
+$comment = count(get_comments()); //评论总数
 
 if ($count_posts) {
-    /* 已发布的数量 */
-    $publish = $count_posts->publish;
+  /* 已发布的数量 */
+  $publish = $count_posts->publish;
 }
-
 
 ?>
 
 <!--作者信息-->
 <div class="author">
-    <div class="author-beijin">
-        <img src="<?php echo $beijin; ?>" title="作者头像"/>
+  <div class="author-beijin">
+    <img src="<?php echo $beijin; ?>" title="作者头像" />
+  </div>
+  <div class="offset">
+    <div class="author-avatar">
+      <img src="<?php echo $avatar; ?>" title="作者头像" />
     </div>
-    <div class="offset">
-        <div class="author-avatar">
-            <img src="<?php echo $avatar; ?>" title="作者头像"/>
-        </div>
-        <div class="author-info">
-            <div class="nickname">
-                <?php echo $nickname; ?>
-            </div>
-            <div class="tag">
-                <?php echo $profession; ?>
-            </div>
-        </div>
-        <div class="author-self">
-            <?php echo $description; ?>
-        </div>
-        <div class="statistic">
-
-            <div class="item">
-                <span class="top">文章数</span>
-                <span class="bottom"><?php echo $publish; ?></span>
-            </div>
-            <div class="item">
-                <span class="top">评论数</span>
-                <span class="bottom"><?php echo $comment; ?></span>
-            </div>
-            <div class="item">
-                <span class="top">阅读数</span>
-                <span class="bottom"><?php echo $views; ?></span>
-            </div>
-
-        </div>
+    <div class="author-info">
+      <div class="nickname">
+        <?php echo $nickname; ?>
+      </div>
+      <div class="tag">
+        <?php echo $profession; ?>
+      </div>
     </div>
+    <div class="author-self">
+      <?php echo $description; ?>
+    </div>
+    <div class="statistic">
+
+      <div class="item">
+        <span class="top">文章数</span>
+        <span class="bottom"><?php echo $publish; ?></span>
+      </div>
+      <div class="item">
+        <span class="top">评论数</span>
+        <span class="bottom"><?php echo $comment; ?></span>
+      </div>
+      <div class="item">
+        <span class="top">阅读数</span>
+        <span class="bottom"><?php echo $views; ?></span>
+      </div>
+
+    </div>
+  </div>
 
 </div>

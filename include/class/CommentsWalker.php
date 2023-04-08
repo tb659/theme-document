@@ -6,7 +6,6 @@
  * @date 2022-07-08
  * */
 
-
 /**
  * Core class used to implement an HTML list of nav menu items.
  *
@@ -14,21 +13,17 @@
  *
  * @see Walker
  */
-class CommentsWalker extends Walker_Comment {
+class CommentsWalker extends Walker_Comment
+{
+  public function filter_comment_text($comment_text, $comment)
+  {
+    $commenter          = wp_get_current_commenter();
+    $show_pending_links = !empty($commenter['comment_author']);
 
-	public function filter_comment_text( $comment_text, $comment ) {
-		$commenter          = wp_get_current_commenter();
-		$show_pending_links = ! empty( $commenter['comment_author'] );
+    if ($comment && '0' == $comment->comment_approved && !$show_pending_links) {
+      $comment_text = wp_kses($comment_text, array());
+    }
 
-		if ( $comment && '0' == $comment->comment_approved && ! $show_pending_links ) {
-			$comment_text = wp_kses( $comment_text, array() );
-		}
-
-		return '<div class="comment-content">' . $comment_text . "</div>";
-	}
-
+    return '<div class="comment-content">' . $comment_text . "</div>";
+  }
 }
-
-?>
-
-

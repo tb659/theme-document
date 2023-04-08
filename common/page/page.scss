@@ -1,6 +1,5 @@
 html {
   body .index {
-
     margin-top: calc(60px + 1rem);
 
     .main-main {
@@ -24,7 +23,6 @@ html {
             color: var(--theme-text-color);
             margin: 0 0.15rem;
 
-
             &:hover {
               background-color: var(--theme-color);
               border-radius: 8px;
@@ -47,7 +45,6 @@ html {
               margin: 0;
               padding: 0;
 
-
               .datetime {
                 white-space: nowrap;
                 font-size: var(--theme-third-level-title);
@@ -62,7 +59,8 @@ html {
                 flex-direction: column;
                 overflow: hidden;
 
-                .title, .excerpt {
+                .title,
+                .excerpt {
                   width: 100%;
                   white-space: nowrap;
                   overflow: hidden;
@@ -77,39 +75,26 @@ html {
 
                 .excerpt {
                   margin-top: 0.3rem;
-                  font-size: 0.80rem;
+                  font-size: 0.8rem;
                   color: var(--theme-text-secondary);
                 }
               }
-
-
             }
           }
         }
-
-
       }
-
-
     }
-
-
   }
 }
-
 
 @media (max-width: 1024px) {
   html {
     body .index {
-
       .main-main {
-
         .main-content {
-
           padding: 1.5rem 0.5rem;
 
           .list {
-
             padding: 0;
 
             li {

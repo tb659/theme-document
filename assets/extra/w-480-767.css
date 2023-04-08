@@ -4,10 +4,20 @@
 */
 @media (min-width: 481px) and (max-width: 767px) {
   html {
-    min-width: unset; }
-    html body .password img {
-      width: 45%; }
-    html body .main-container .main-main {
-      width: 95%; }
-    html body .main-container #space, html body .main-container #fixed {
-      display: none; } }
+    min-width: unset;
+  }
+  html body .password img {
+    width: 45%;
+  }
+  html body .main-container .main-main {
+    width: 95%;
+    /* 文章推荐 */
+  }
+  html body .main-container .main-main .recommend .list .swiper-slide {
+    width: calc(33.3% - 12px);
+  }
+  html body .main-container #space,
+  html body .main-container #fixed {
+    display: none;
+  }
+}

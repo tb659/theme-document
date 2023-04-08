@@ -5,4 +5,9 @@
 @media (min-width: 1024px) and (max-width: 1580px) {
   html body .main-container .main-main {
     width: 55%;
-    margin-left: calc((100% - 55% - 16.6rem) / 2); } }
+    /* 文章推荐 */
+  }
+  html body .main-container .main-main .recommend .list .swiper-slide {
+    width: calc(25% - 12px);
+  }
+}

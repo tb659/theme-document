@@ -3,12 +3,12 @@
 */
 @keyframes rotate {
   0% {
-    transform:rotate(0deg);
+    transform: rotate(0deg);
   }
-  50%{
-    transform:rotate(180deg);
+  50% {
+    transform: rotate(180deg);
   }
   to {
-    transform:rotate(360deg);
+    transform: rotate(360deg);
   }
 }

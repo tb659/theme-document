@@ -6,7 +6,6 @@
     min-width: unset;
 
     body {
-
       .main-container {
         justify-content: center;
 
@@ -44,16 +43,13 @@
             display: none;
           }
 
-
           .menu-left {
-
             /*background-color: var(--theme-front-color);*/
             /*border: 1px solid #f3f3f3;*/
 
             margin: 0;
             padding: 0 0.2rem;
             width: 100%;
-
 
             /*&:hover{
               box-shadow: 0 0 5px 2px var(--theme-color-20);
@@ -74,7 +70,6 @@
                 flex-shrink: 0;
                 padding: 0 1rem 0 0.6rem;
                 color: var(--theme-sub-menu-font-color);
-
               }
             }
 
@@ -105,7 +100,7 @@
               flex-wrap: wrap;
               font-size: var(--theme-third-level-title);
 
-              border-bottom: 1px solid rgba(0, 0, 0, .05);
+              border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 
               i {
                 line-height: normal;
@@ -114,9 +109,7 @@
               span {
                 font-size: 1rem;
               }
-
             }
-
 
             /*
               如果拥有子菜单
@@ -131,9 +124,7 @@
               .sub-menu {
                 display: none;
               }
-
             }
-
 
             .read-mode {
               position: absolute !important;
@@ -152,8 +143,6 @@
               }
             }
           }
-
-
         }
       }
 

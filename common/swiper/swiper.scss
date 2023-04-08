@@ -1,13 +1,13 @@
 .swiper {
-
   width: 100%;
   margin-bottom: 1.2rem;
 
   .swiper-slide {
     display: grid;
     grid-template-columns: 73% 27%;
-    grid-template-areas: "a b"
-                         "a c";
+    grid-template-areas:
+      "a b"
+      "a c";
 
     .swiper-item {
       height: 175px;
@@ -33,7 +33,6 @@
         所属目录
       */
       .modal {
-
         position: absolute;
         left: 0;
         top: 0;
@@ -49,7 +48,6 @@
         z-index: 99;
         background-color: rgba(0, 0, 0, 0.3);
         text-decoration: none;
-
 
         * {
           color: white;
@@ -69,16 +67,14 @@
             font-size: var(--theme-header-size);
             margin-bottom: 10px;
           }
-
         }
-
 
         .category {
           width: fit-content;
           padding: 0 0.5rem;
           margin: 0.45rem 0.35rem;
           border-radius: 5px;
-          background-color: #{rgba(#000000,0.6)};
+          background-color: #{rgba(#000000, 0.6)};
 
           &:hover {
             color: white;
@@ -86,8 +82,6 @@
             background-color: var(--theme-color);
           }
         }
-
-
       }
     }
 
@@ -124,12 +118,8 @@
         }
       }
     }
-
   }
-
-
 }
-
 
 /*
   ##平板电脑/Ipad竖屏
@@ -137,9 +127,7 @@
 */
 
 @media (min-width: 1024px) and (max-width: 1580px) {
-
   .swiper {
-
     .swiper-slide {
       .swiper-item {
         height: 155px;
@@ -148,7 +136,6 @@
       .swiper-a {
         height: 320px;
       }
-
     }
   }
 }
@@ -156,8 +143,9 @@
 @media (max-width: 1024px) {
   .swiper {
     .swiper-slide {
-      grid-template-areas: "a a"
-                           "b c";
+      grid-template-areas:
+        "a a"
+        "b c";
       grid-template-columns: 50% 50%;
 
       .swiper-c {
@@ -168,7 +156,8 @@
         margin: 0;
       }
 
-      .swiper-c, .swiper-b {
+      .swiper-c,
+      .swiper-b {
         margin-top: 10px;
       }
     }
@@ -177,6 +166,4 @@
   .mobile {
     display: none;
   }
-
-
 }

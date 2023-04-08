@@ -8,5 +8,6 @@
 
 ?>
 <div class="main-bottom">
-    <?php nicen_theme_config('document_footer_extra');//额外代码?>
+  <?php nicen_theme_config('document_footer_extra'); //额外代码
+  ?>
 </div>
