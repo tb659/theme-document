@@ -48,6 +48,7 @@ function nicen_theme_load_source()
       wp_enqueue_script('main-monitor', $url . '/common/inline/monitor.js', array(), filemtime($root . '/common/inline/monitor.js'), false);
     }
   }
+
   if (is_category() || is_tag() || is_search()) {
     if (nicen_theme_config("document_show_else_left_nav", false)) {
       wp_enqueue_script('main-monitor', $url . '/common/inline/monitor.js', array(), filemtime($root . '/common/inline/monitor.js'), false);
@@ -57,19 +58,18 @@ function nicen_theme_load_source()
 	 * 文章页面加载的资源
 	 * */
   if (is_single()) {
-
     wp_enqueue_script('glightboxs', $url . '/common/glightbox/glightbox.min.js', array(), filemtime($root . '/common/glightbox/glightbox.min.js'), false);
+    wp_enqueue_style('glightboxs', $url . '/common/glightbox/glightbox.min.css', array(), filemtime($root . '/common/glightbox/glightbox.min.css'));
     wp_enqueue_script('prism', $url . '/common/prism/prism.js', array(), filemtime($root . '/common/prism/prism.js'), false);
     wp_enqueue_style('prism', $url . '/common/prism/prism.css', array(), filemtime($root . '/common/prism/prism.css'));
-    wp_enqueue_style('glightboxs', $url . '/common/glightbox/glightbox.min.css', array(), filemtime($root . '/common/glightbox/glightbox.min.css'));
   }
 
   /*
 	 * 主页轮播相关资源加载
 	 * */
   if (is_home()) {
-    wp_enqueue_style('swiper_self', $url . '/common/swiper/swiper.css', array(), filemtime($root . '/common/swiper/swiper.css'));
     wp_enqueue_script('swiper_self', $url . '/common/swiper/swiper.js', array(), filemtime($root . '/common/swiper/swiper.js'), true);
+    wp_enqueue_style('swiper_self', $url . '/common/swiper/swiper.css', array(), filemtime($root . '/common/swiper/swiper.css'));
     wp_enqueue_script('swiper', 'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/Swiper/8.0.3/swiper-bundle.min.js', false);
     wp_enqueue_style('swiper', 'https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/Swiper/8.0.3/swiper-bundle.css', array());
     /*
@@ -84,7 +84,6 @@ function nicen_theme_load_source()
 	 * 文章ID
 	 * */
   if (is_singular()) {
-
     wp_enqueue_script('main-emoji', $url . '/common/inline/emoji.js', array(), filemtime($root . '/common/inline/emoji.js'), false);
 
     /*
@@ -138,7 +137,6 @@ function nicen_theme_load_source()
 	 * 动态加载页面资源
 	 *
 	 */
-
   $template = get_page_template_slug(get_queried_object_id());
   foreach (PAGES as $key => $value) {
     /*

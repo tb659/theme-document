@@ -1,6 +1,6 @@
 (function () {
   /*
-   * 警告文字块
+   * h3
    * */
   tinymce.create("tinymce.plugins.h3", {
     init: function (ed, url) {

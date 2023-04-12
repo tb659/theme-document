@@ -112,7 +112,7 @@ function nicen_theme_comment_notify($comment_id)
   $parent_id      = $comment->comment_parent ? $comment->comment_parent : '';
   $spam_confirmed = $comment->comment_approved;
 
-  if (($parent_id != '') && ($spam_confirmed == '1')) {
+  if (($parent_id !== '') && ($spam_confirmed === '1')) {
     $wp_email = $desination_configs['document_smtp_acccount'];
     $to      = trim(get_comment($parent_id)->comment_author_email);
     $subject = '[通知]您的留言有了新的回复';

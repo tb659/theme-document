@@ -12,7 +12,7 @@ if (nicen_theme_showArticleCate()) {
   $catelog = nicen_theme_navigator();
   if (!empty($catelog)) {
 ?>
-    <div id="space">
+    <div id="space" class="ishome">
       <aside class="main-left" id="navigator">
         <div class="main-top">
           <ul>

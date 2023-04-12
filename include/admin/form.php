@@ -47,7 +47,7 @@ function nicen_theme_do_settings_fields_user($page, $section, $callback = false)
     /*
 		 * 如果是文字说明
 		 * */
-    if ($field['id'] == 'text_info') {
+    if ($field['id'] === 'text_info') {
       echo sprintf('<a-form-item label=%s>', $field['title']);
       echo $field['callback']($field['args']);
       echo '</a-form-item>';
@@ -80,9 +80,10 @@ function nicen_theme_do_settings_fields_user($page, $section, $callback = false)
       /*
 			 * 总开关或者忽略的
 			 * */
-      if ($param['key'] == $field['id'] || in_array($field['id'], $param['ignore'])) {
+      if ($param['key'] === $field['id'] || in_array($field['id'], $param['ignore'])) {
         echo sprintf('<a-form-item ' . $label . '>', $field['title']);
       } else {
+        // 这里的param[key]要 == 1
         echo sprintf('<a-form-item v-show="data.' . $param['key'] . ' == 1" ' . $label . '>', $field['title']);
       }
     }
@@ -179,7 +180,7 @@ function nicen_theme_setting_load()
   <div class="wrap" id="VueApp" v-cloak>
     <a-config-provider :locale="zhCN">
       <div>
-        <a-page-header title="<?php echo esc_html(get_admin_page_title()); ?>" :back-icon="false" sub-title="加油">
+        <a-page-header title="<?php echo esc_html(get_admin_page_title()); ?>" :back-icon="false" sub-title="瑞宝">
           <template #extra>
             <a-button :loading="resuming" type="primary" @click="resume">
               {{resuming?"正在恢复...":"恢复默认配置"}}
@@ -306,7 +307,7 @@ function nicen_theme_form_textarea($args)
 function nicen_theme_form_color($args)
 {
 ?>
-  <div style="display: flex;align-items: center">
+  <div style="display: flex; align-items: center">
     <input name="<?php echo $args['label_for']; ?>" v-model="data.<?php echo $args['label_for']; ?>" hidden />
     <color-picker v-model="data.<?php echo $args['label_for']; ?>"></color-picker>
     <a-input name="<?php echo $args['label_for']; ?>" placeholder="请输入<?php echo $args['title']; ?>" v-model="data.<?php echo $args['label_for']; ?>" allow-clear />

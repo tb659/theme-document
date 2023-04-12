@@ -5,7 +5,7 @@ $thumbnail = nicen_theme_getThumbnail(); //是否显示
 /*
  * 判断缩略图显示的位置
  * */
-if (nicen_theme_config('document_thumbnail_position', false) == "right") {
+if (nicen_theme_config('document_thumbnail_position', false) === "right") {
   $position = ""; //默认为空
 } else {
   $position = "i-article-left"; //默认为空

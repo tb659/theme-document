@@ -89,3 +89,13 @@ p {
     }
   }
 }
+
+/*
+  文章下方推荐 swiper左右按钮穿透点击
+*/
+.main-container {
+  .swiper-button-next,
+  .swiper-button-prev {
+    pointer-events: auto !important;
+  }
+}

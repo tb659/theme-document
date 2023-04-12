@@ -9,7 +9,7 @@ function widget_input($that, $instance, $args, $isArray = false)
   <p>
     <label for="<?php echo $that->get_field_id($args['field']); ?>">
       <div style="margin-bottom: 0.5rem;"><?php echo $args['title']; ?></div>
-      <input class="widefat" id="<?php echo $that->get_field_id($args['field']); ?>" name="<?php echo $that->get_field_name($args['field']) . ($isArray ? '[]' : ''); ?>" type="<?php echo $args['type'] ?>" value="<?php echo $isArray ? $value[$args['index']] : $value; ?>" />
+      <input class="widefat" id="<?php echo $that->get_field_id($args['field']); ?>" name="<?php echo $that->get_field_name($args['field']) . ($isArray ? '[]' : ''); ?>" type="<?php echo $args['type'] ?>" value="<?php echo $isArray && $value ? $value[$args['index']] : $value; ?>" />
     </label>
   </p>
 <?php
@@ -26,7 +26,7 @@ function widget_datepicker($that, $instance, $args, $isArray = false)
   <p>
     <label for="<?php echo $that->get_field_id($args['field']); ?>">
       <div style="margin-bottom: 0.5rem;"><?php echo $args['title']; ?></div>
-      <input id="select-datetime-<?php echo $count; ?>" data-count="<?php echo $count; ?>" class="widefat select-datetime" id="<?php echo $that->get_field_id($args['field']); ?>" name="<?php echo $that->get_field_name($args['field']) . ($isArray ? '[]' : ''); ?>" type="<?php echo $args['type'] ?>" value="<?php echo $isArray ? $value[$args['index']] : $value; ?>" />
+      <input id="select-datetime-<?php echo $count; ?>" data-count="<?php echo $count; ?>" class="widefat select-datetime" id="<?php echo $that->get_field_id($args['field']); ?>" name="<?php echo $that->get_field_name($args['field']) . ($isArray ? '[]' : ''); ?>" type="<?php echo $args['type'] ?>" value="<?php echo $isArray && $value ? $value[$args['index']] : $value; ?>" />
     </label>
   </p>
 <?php
@@ -34,7 +34,7 @@ function widget_datepicker($that, $instance, $args, $isArray = false)
 }
 
 /*
- * 时间选择
+ * 背景图片链接
  * */
 function widget_media($that, $instance, $args, $isArray = false)
 {
@@ -44,10 +44,10 @@ function widget_media($that, $instance, $args, $isArray = false)
     <label for="<?php echo $that->get_field_id($args['field']); ?>">
       <div style="margin-bottom: 0.5rem;"><?php echo $args['title']; ?></div>
       <div style="display: flex;align-items: center;">
-        <input class="widefat" id="<?php echo $that->get_field_id($args['field']); ?>" name="<?php echo $that->get_field_name($args['field']) . ($isArray ? '[]' : ''); ?>" type="<?php echo $args['type'] ?>" value="<?php echo $isArray ? $value[$args['index']] : $value; ?>" />
+        <input class="widefat" id="<?php echo $that->get_field_id($args['field']); ?>" name="<?php echo $that->get_field_name($args['field']) . ($isArray ? '[]' : ''); ?>" type="<?php echo $args['type'] ?>" value="<?php echo $isArray && $value ? $value[$args['index']] : $value; ?>">
+        <!-- <button style="margin-left: 10px;white-space: nowrap;" class="select-media" type="button">选择</button> -->
+      </div>
     </label>
-    <button style="margin-left: 10px;white-space: nowrap;" class="select-media" type="button">选择</button>
-    </div>
   </p>
 <?php
 }
@@ -60,19 +60,19 @@ function widget_select($that, $instance, $args, $options, $isArray = false)
 {
   $current = $that->getValue($instance, $args['field'], $args['default']);
 ?>
-  <p>
+  <div>
     <label for="<?php echo $that->get_field_id($args['field']); ?>">
       <div style="margin-bottom: 0.5rem;"><?php echo $args['title']; ?></div>
       <select class="widefat" id="<?php echo $that->get_field_id($args['field']); ?>" name="<?php echo $that->get_field_name($args['field']) . ($isArray ? '[]' : ''); ?>">
         <?php
         foreach ($options as $key => $value) {
         ?>
-          <option value="<?php echo $key; ?>" <?php echo ($isArray ? $value[$args['index']] : $current) == $key ? "selected" : ""; ?>>
+          <option value="<?php echo $key; ?>" <?php echo ($isArray ? $value[$args['index']] : $current) === $key ? "selected" : ""; ?>>
             <?php echo $value; ?>
           </option>
         <?php } ?>
       </select>
     </label>
-  </p>
+  </div>
 <?php
 }

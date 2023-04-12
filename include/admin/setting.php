@@ -62,7 +62,7 @@ function nicen_theme_config_register()
             /*
 						 * show_title，计数排重
 						 * */
-            if ($field['id'] == "H1_title") {
+            if ($field['id'] === "H1_title") {
               $title_count++;
               $field['id'] = $field['id'] . $title_count;
             }

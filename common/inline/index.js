@@ -3,8 +3,8 @@
  * */
 $(function () {
   /*
-        节流
-     */
+  *  节流
+  */
   function throttle(cb, wait = 3000) {
     let previous = 0;
     return (...args) => {
@@ -53,7 +53,7 @@ $(function () {
       /*
        * 没有下一页了
        * */
-      if (load.data("next") == "") {
+      if (load.data("next") === "") {
         return;
       }
 
@@ -94,15 +94,17 @@ $(function () {
           let linkId = $(item).find("h2").attr("id");
           let title = $(item).find("h2 a").text();
 
-          catelog.append(`<li>
-                                       <div class="first-index">
-                                           <div>
-                                               <a href="#${linkId}" title="${title}">
-                                               ${index + number + 1}. ${title}
-                                               </a>
-                                            </div>
-                                       </div>
-                                  </li>`);
+          catelog.append(`
+            <li>
+              <div class="first-index article-title-link">
+                <div>
+                  <a href="#${linkId}" title="${title}">
+                    ${index + number + 1}. ${title}
+                  </a>
+                </div>
+              </div>
+            </li>
+          `);
         });
       });
     });
@@ -123,7 +125,7 @@ $(function () {
      * */
     const load = throttle(() => {
       $(".main-content .loadnext").click();
-    }, 500);
+    }, 3000);
 
     $(window).on("scroll", () => {
       if (html.scrollTop() + window.innerHeight + 1 >= html.innerHeight()) {
@@ -189,15 +191,17 @@ $(function () {
                 let linkId = $(item).find("h2").attr("id");
                 let title = $(item).find("h2 a").text();
 
-                insert += `<li>
-                                       <div class="first-index">
-                                           <div>
-                                               <a href="#${linkId}" title="${title}">
-                                               ${index + 1}. ${title}
-                                               </a>
-                                            </div>
-                                       </div>
-                                  </li>`;
+                insert += `
+                  <li>
+                    <div class="first-index article-title-link">
+                      <div>
+                        <a href="#${linkId}" title="${title}">
+                          ${index + 1}. ${title}
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                `;
               });
 
               catelist.append(insert + `</ul>`); //插入目录

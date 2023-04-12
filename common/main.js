@@ -76,7 +76,7 @@ $(function () {
    * */
   (function () {
     /*屏蔽其他页面加载*/
-    if (typeof GLightbox == "undefined") {
+    if (typeof GLightbox === "undefined") {
       return;
     }
     /*初始化灯箱*/
@@ -99,7 +99,7 @@ $(function () {
      * */
     $(".icon-sousuo").on("click", function (event) {
       let that = $("#search");
-      if (that.val() == "") {
+      if (that.val() === "") {
         return;
       } else {
         location.href = location.origin + "?s=" + that.val();
@@ -111,10 +111,10 @@ $(function () {
      * */
     $("#search").on("keypress", function (event) {
       let that = $(this);
-      if (that.val() == "") {
+      if (that.val() === "") {
         return;
       } else {
-        if (event.keyCode == "13") {
+        if (event.keyCode === 13) {
           location.href = location.origin + "?s=" + that.val();
         }
       }
@@ -345,7 +345,7 @@ $(function () {
         /*
          * 如果没有右边栏
          * */
-        if (right.length == 0 || isFixed) return;
+        if (right.length === 0 || isFixed) return;
 
         /*
          * 右侧大于左侧，保持static

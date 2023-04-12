@@ -82,7 +82,7 @@ html body .index .main-main .main-content .list li a .info .title {
 html body .index .main-main .main-content .list li a .info .excerpt {
   margin-top: 0.3rem;
   font-size: 0.8rem;
-  color: var(--theme-text-secondary);
+  color: var(--theme-text-second);
 }
 
 @media (max-width: 1024px) {

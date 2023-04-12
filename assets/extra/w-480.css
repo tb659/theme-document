@@ -6,12 +6,14 @@
   :root {
     --theme-first-level-title: 1.25rem;
     --theme-text: 0.95rem;
-    --theme-secondary: 0.85rem;
+    --theme-second: 0.85rem;
     --theme-text-mini: 0.75rem;
     --theme-text-more-mini: 0.75rem;
-    --theme-secondary-level-title: 1.05rem;
-    --theme-third-level-title: 1rem;
-    --theme-fourth-level-title: 0.95rem;
+    --theme-second-level-title: 1.1rem;
+    --theme-third-level-title: 1.05rem;
+    --theme-fourth-level-title: 1rem;
+    --theme-fifth-level-title: 0.95rem;
+    --theme-sixth-level-title: 0.9rem;
     --theme-header-size: 1.15rem;
     --theme-margin-bottom: 1.1rem;
     --theme-margin-bottom-max: 1.2rem;
@@ -75,14 +77,19 @@
   html body .main-container .main-main .main-content {
     padding: 1.1rem 1rem 0 1rem;
   }
-  html body .main-container .main-main .main-content .main-article h2 {
+  html body .main-container .main-main .main-content .main-article h2,
+  html body .main-container .main-main .main-content .main-article h3,
+  html body .main-container .main-main .main-content .main-article h4,
+  html body .main-container .main-main .main-content .main-article h5,
+  html body .main-container .main-main .main-content .main-article h6 {
     font-weight: bold !important;
   }
-  html body .main-container .main-main .main-content .main-article h3 {
-    font-weight: bold;
-  }
-  html body .main-container .main-main .main-content .main-article h4 {
-    font-weight: bold;
+  html body .main-container .main-main .main-content .main-article h2 a[name],
+  html body .main-container .main-main .main-content .main-article h3 a[name],
+  html body .main-container .main-main .main-content .main-article h4 a[name],
+  html body .main-container .main-main .main-content .main-article h5 a[name],
+  html body .main-container .main-main .main-content .main-article h6 a[name] {
+    color: #000;
   }
   html body .main-container .main-main .main-content .breadcrumb {
     padding-bottom: 0.75rem;

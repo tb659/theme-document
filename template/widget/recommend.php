@@ -8,12 +8,13 @@
 global $table_prefix, $wpdb;
 
 ?>
-<div class="div-info recommend <?php echo $show_title == 1 ? '' : 'no-title'; ?>">
-
-  <?php if ($show_title == 1) { ?>
+<div class="div-info recommend <?php echo $show_title === '1' ? '' : 'no-title'; ?>">
+  <?php if ($show_title === '1') { ?>
     <div class="header">
       <ul>
-        <li class="active" style="padding-left:1rem;padding-right:1rem;"><?php echo $title; ?></li>
+        <li class="active" style="padding-left:1rem;padding-right:1rem;">
+          <?php echo $title; ?>
+        </li>
         <!-- <li>修改记录</li>-->
       </ul>
     </div>
@@ -112,7 +113,7 @@ global $table_prefix, $wpdb;
               </span>
             </div>
             <div class="category">
-              <?php echo nicen_theme_getTerm(get_the_ID()); ?>
+              <?php echo nicen_theme_getCategory(get_the_ID()); ?>
             </div>
           </a>
         </div>
@@ -123,8 +124,7 @@ global $table_prefix, $wpdb;
       ?>
     </div>
     <?php
-
-    if ($count == 0) {
+    if ($count === 0) {
       $url = get_template_directory_uri() . "/assets/images/nothing.svg"; //主题url
       echo '
         <div class="empty">

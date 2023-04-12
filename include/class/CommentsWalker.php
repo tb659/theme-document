@@ -20,7 +20,7 @@ class CommentsWalker extends Walker_Comment
     $commenter          = wp_get_current_commenter();
     $show_pending_links = !empty($commenter['comment_author']);
 
-    if ($comment && '0' == $comment->comment_approved && !$show_pending_links) {
+    if ($comment && '0' === $comment->comment_approved && !$show_pending_links) {
       $comment_text = wp_kses($comment_text, array());
     }
 

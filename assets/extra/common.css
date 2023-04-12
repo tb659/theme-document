@@ -88,3 +88,11 @@ p {
   letter-spacing: 1px;
   border-radius: 0.45rem;
 }
+
+/*
+  文章下方推荐 swiper左右按钮穿透点击
+*/
+.main-container .swiper-button-next,
+.main-container .swiper-button-prev {
+  pointer-events: auto !important;
+}

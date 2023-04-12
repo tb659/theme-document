@@ -8,11 +8,13 @@
   --theme-text-more-mini: 0.69rem;
   --theme-text: 0.84rem;
   --theme-header-size: 1.1rem;
-  --theme-secondary: 0.78rem;
-  --theme-first-level-title: 1.35rem;
-  --theme-secondary-level-title: 1.15rem;
-  --theme-third-level-title: 0.96rem;
-  --theme-fourth-level-title: 0.84rem;
+  --theme-second: 0.78rem;
+  --theme-first-level-title: 1.4rem;
+  --theme-second-level-title: 1.2rem;
+  --theme-third-level-title: 1rem;
+  --theme-fourth-level-title: 0.95rem;
+  --theme-fifth-level-title: 0.9rem;
+  --theme-sixth-level-title: 0.85rem;
 
   /*主题文件样式变量*/
   --theme-black-text: #333;
@@ -22,7 +24,7 @@
   --theme-color: #3eaf7c;
   --theme-color-20: #{rgba(#42b983, 0.2)};
   --theme-text-color: #262626;
-  --theme-text-secondary: #{rgba(#000000, 0.65)};
+  --theme-text-second: #{rgba(#000000, 0.65)};
   --theme-text-mini-color: #{rgba(#000000, 0.65)};
 
   --theme-margin-bottom: 1rem;
@@ -63,8 +65,9 @@
 
   /*文章导航、目录样式变量*/
   --theme-first-index-title: 0.78rem;
-  --theme-secondary-index-title: 0.78rem;
+  --theme-second-index-title: 0.78rem;
   --theme-third-index-title: 0.78rem;
+  --theme-fourth-index-title: 0.78rem;
 
   /*代码块样式*/
   --theme-pre-code-bg: #f7f7f7;

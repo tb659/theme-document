@@ -20,7 +20,7 @@
   */
   --theme-footer-bg-color: transparent;
   --theme-footer-font-color: white;
-  --theme-text-secondary: rgba(235, 235, 235, 0.99);
+  --theme-text-second: rgba(235, 235, 235, 0.99);
   --theme-hover-bg: var(--theme-text-color);
   --theme-hover-color: var(--theme-black);
   --theme-front-color: #2a2a2b;

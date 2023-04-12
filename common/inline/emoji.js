@@ -18,7 +18,7 @@ $(function () {
           sel.moveStart("character", -l);
 
           var wee = sel.text.length;
-          if (arguments.length == 2) {
+          if (arguments.length === 2) {
             var l = $t.value.length;
             sel.moveEnd("character", wee + t);
             t <= 0
@@ -26,7 +26,7 @@ $(function () {
               : sel.moveStart("character", wee - t - myValue.length);
             sel.select();
           }
-        } else if ($t.selectionStart || $t.selectionStart == "0") {
+        } else if ($t.selectionStart || $t.selectionStart === "0") {
           var startPos = $t.selectionStart;
           var endPos = $t.selectionEnd;
           var scrollTop = $t.scrollTop;
@@ -36,7 +36,7 @@ $(function () {
           $t.selectionStart = startPos + myValue.length;
           $t.selectionEnd = startPos + myValue.length;
           $t.scrollTop = scrollTop;
-          if (arguments.length == 2) {
+          if (arguments.length === 2) {
             $t.setSelectionRange(startPos - t, $t.selectionEnd + t);
             this.focus();
           }

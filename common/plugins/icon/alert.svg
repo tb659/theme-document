@@ -1,4 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-    <path fill="none" d="M0 0h24v24H0z"/>
-    <path d="M12.866 3l9.526 16.5a1 1 0 0 1-.866 1.5H2.474a1 1 0 0 1-.866-1.5L11.134 3a1 1 0 0 1 1.732 0zm-8.66 16h15.588L12 5.5 4.206 19zM11 16h2v2h-2v-2zm0-7h2v5h-2V9z"/>
-</svg>
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1681292523982" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="39413" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M512 512m-448 0a448 448 0 1 0 896 0 448 448 0 1 0-896 0Z" fill="#f4ea2a" p-id="39414" data-spm-anchor-id="a313x.7781069.0.i59" class="selected"></path><path d="M533.87 655.08h-43.74c-7.56 0-13.76-6-13.99-13.56l-13.13-420.18c-0.25-7.9 6.09-14.44 13.99-14.44h70c7.9 0 14.24 6.54 13.99 14.44l-13.13 420.18c-0.23 7.55-6.43 13.56-13.99 13.56z" fill="#FFFFFF" p-id="39415"></path><path d="M512 765.73m-51.36 0a51.36 51.36 0 1 0 102.72 0 51.36 51.36 0 1 0-102.72 0Z" fill="#FFFFFF" p-id="39416"></path></svg>

@@ -53,7 +53,7 @@ $previous = get_previous_post(); //上一篇
   </div>
 
   <?php
-  $equal         = nicen_theme_config("document_assiciate_type", false) == 1 ? false : true;
+  $equal         = nicen_theme_config("document_assiciate_type", false) !== 1;
   $next_post     = get_previous_post($equal);
   $previous_post = get_next_post($equal);
   ?>

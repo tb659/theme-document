@@ -21,18 +21,20 @@ function nicen_theme_admin_init()
     }*/
 
   //判断用户是否使用可视化编辑器
-  if (get_user_option('rich_editing') == 'true') {
+  if (get_user_option('rich_editing') === 'true') {
     /*tinymce加载时引入插件的js*/
     add_filter('mce_external_plugins', function ($plugin_array) {
       /*
       * 引入插件的js
       * */
-      $plugin_array['success']  = get_template_directory_uri() . '/common/plugins/success.js';/*指定要加载的插件*/
-      $plugin_array['alert']    = get_template_directory_uri() . '/common/plugins/alert.js';/*指定要加载的插件*/
-      $plugin_array['error']    = get_template_directory_uri() . '/common/plugins/error.js';/*指定要加载的插件*/
       $plugin_array['h1']       = get_template_directory_uri() . '/common/plugins/h1.js';/*指定要加载的插件*/
       $plugin_array['h2']       = get_template_directory_uri() . '/common/plugins/h2.js';/*指定要加载的插件*/
       $plugin_array['h3']       = get_template_directory_uri() . '/common/plugins/h3.js';/*指定要加载的插件*/
+      $plugin_array['h4']       = get_template_directory_uri() . '/common/plugins/h4.js';/*指定要加载的插件*/
+      $plugin_array['h5']       = get_template_directory_uri() . '/common/plugins/h5.js';/*指定要加载的插件*/
+      $plugin_array['success']  = get_template_directory_uri() . '/common/plugins/success.js';/*指定要加载的插件*/
+      $plugin_array['alert']    = get_template_directory_uri() . '/common/plugins/alert.js';/*指定要加载的插件*/
+      $plugin_array['error']    = get_template_directory_uri() . '/common/plugins/error.js';/*指定要加载的插件*/
       $plugin_array['code']     = get_template_directory_uri() . '/common/plugins/code.js';/*指定要加载的插件*/
       $plugin_array['lightbox'] = get_template_directory_uri() . '/common/plugins/lightbox.js';/*指定要加载的插件*/
       $plugin_array['mark']     = get_template_directory_uri() . '/common/plugins/mark.js';/*指定要加载的插件*/
@@ -51,12 +53,14 @@ function nicen_theme_admin_init()
     /*过滤 TinyMCE 按钮的第一行列表（Visual 选项卡）,在可视编辑器中注册一个按钮*/
     add_filter('mce_buttons', function ($buttons) {
       /*每一个按钮代表一个插件的类*/
-      $buttons[] = 'success';
-      $buttons[] = 'alert';
-      $buttons[] = 'error';
       $buttons[] = 'h1';
       $buttons[] = 'h2';
       $buttons[] = 'h3';
+      $buttons[] = 'h4';
+      $buttons[] = 'h5';
+      $buttons[] = 'success';
+      $buttons[] = 'alert';
+      $buttons[] = 'error';
       $buttons[] = 'code';
       $buttons[] = 'lightbox';
       $buttons[] = 'mark';

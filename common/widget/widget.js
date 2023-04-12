@@ -57,7 +57,7 @@ jQuery(function () {
       media.open();
     });
 
-    if ($(".widget-liquid-right #jq-tabs").length == 0 || vm) {
+    if ($(".widget-liquid-right #jq-tabs").length === 0 || vm) {
       return;
     }
 

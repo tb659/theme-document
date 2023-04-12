@@ -1,6 +1,6 @@
 (function () {
   /*
-   * 警告文字块
+   * 图片灯箱
    * */
   tinymce.create("tinymce.plugins.lightbox", {
     init: function (ed, url) {

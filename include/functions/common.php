@@ -48,7 +48,7 @@ function nicen_theme_setPostViews($postID)
 {
   $count_key = 'post_views_count';
   $count     = get_post_meta($postID, $count_key, true);
-  if ($count == '') {
+  if ($count === '') {
     $count = 0;
     delete_post_meta($postID, $count_key);
     add_post_meta($postID, $count_key, '1');
@@ -65,7 +65,7 @@ function nicen_theme_getPostViews($postID)
 {
   $count_key = 'post_views_count';
   $count     = get_post_meta($postID, $count_key, true);
-  if ($count == '') {
+  if ($count === '') {
     delete_post_meta($postID, $count_key);
     add_post_meta($postID, $count_key, '0');
 
@@ -82,7 +82,7 @@ function nicen_theme_setPostNice($postID)
 {
   $count_key = 'post_nice_count';
   $count     = get_post_meta($postID, $count_key, true);
-  if ($count == '') {
+  if ($count === '') {
     $count = 0;
     delete_post_meta($postID, $count_key);
     add_post_meta($postID, $count_key, '1');
@@ -99,7 +99,7 @@ function nicen_theme_getPostNice($postID)
 {
   $count_key = 'post_nice_count';
   $count     = get_post_meta($postID, $count_key, true);
-  if ($count == '') {
+  if ($count === '') {
     delete_post_meta($postID, $count_key);
     add_post_meta($postID, $count_key, '0');
 
@@ -116,7 +116,7 @@ function nicen_theme_setPostBad($postID)
 {
   $count_key = 'post_bad_count';
   $count     = get_post_meta($postID, $count_key, true);
-  if ($count == '') {
+  if ($count === '') {
     $count = 0;
     delete_post_meta($postID, $count_key);
     add_post_meta($postID, $count_key, '1');
@@ -133,7 +133,7 @@ function nicen_theme_getPostBad($postID)
 {
   $count_key = 'post_bad_count';
   $count     = get_post_meta($postID, $count_key, true);
-  if ($count == '') {
+  if ($count === '') {
     delete_post_meta($postID, $count_key);
     add_post_meta($postID, $count_key, '0');
 
@@ -150,25 +150,24 @@ function nicen_theme_navigator()
 {
   if (is_single()) {
     $content = get_the_content();
-
+    $replace = '';
     $h1_number = 1; //h1个数
     $h2_number = 1; //h2个数
     $h3_number = 1; //h3个数
-
-    $h = "/\[h2\][\s\S]*?\[\/h2\]|\[h1\][\s\S]*?\[\/h1\]|\[h3\][\s\S]*?\[\/h3\]/"; //匹配h1标题的正则
-
+    $h4_number = 1; //h4个数
+    $h5_number = 1; //h5个数
+    $h = "/\[h1\][\s\S]*?\[\/h1\]|\[h2\][\s\S]*?\[\/h2\]|\[h3\][\s\S]*?\[\/h3\]|\[h4\][\s\S]*?\[\/h4\]|\[h5\][\s\S]*?\[\/h5\]/"; //匹配h1标题的正则
     preg_match_all($h, $content, $match, PREG_OFFSET_CAPTURE);
 
-    $replace = '';
-
     foreach ($match[0] as $item) {
-
       if (strpos($item[0], 'h1') !== false) {
         $temp    = str_replace(['[h1]', '[/h1]'], ['', ''], $item[0]);
         $replace .= '
           <li>
-            <div class="first-index">
-              <div><a href="#h2' . $h1_number . '" title="' . $temp . '">' . $temp . '</a></div>
+            <div class="first-index article-title-link">
+              <div>
+                <a href="#h2' . $h1_number . '" title="' . $temp . '">' . $temp . '</a>
+              </div>
             </div>
           </li>
         ';
@@ -177,8 +176,10 @@ function nicen_theme_navigator()
         $temp    = str_replace(['[h2]', '[/h2]'], ['', ''], $item[0]);
         $replace .= '
           <li>
-            <div class="secondary-index">
-              <div><a href="#h3' . $h2_number . '" title="' . $temp . '">' . $temp . '</a></div>
+            <div class="second-index article-title-link">
+              <div>
+                <a href="#h3' . $h2_number . '" title="' . $temp . '">' . $temp . '</a>
+              </div>
             </div>
           </li>
         ';
@@ -187,12 +188,38 @@ function nicen_theme_navigator()
         $temp    = str_replace(['[h3]', '[/h3]'], ['', ''], $item[0]);
         $replace .= '
           <li>
-            <div class="third-index">
-            <div><a href="#h4' . $h3_number . '" title="' . $temp . '">' . $temp . '</a></div>
+            <div class="third-index article-title-link">
+              <div>
+                <a href="#h4' . $h3_number . '" title="' . $temp . '">' . $temp . '</a>
+              </div>
             </div>
           </li>
         ';
         $h3_number++;
+      } else if (strpos($item[0], 'h4') !== false) {
+        $temp    = str_replace(['[h4]', '[/h4]'], ['', ''], $item[0]);
+        $replace .= '
+          <li>
+            <div class="fourth-index article-title-link">
+              <div>
+                <a href="#h5' . $h4_number . '" title="' . $temp . '">' . $temp . '</a>
+              </div>
+            </div>
+          </li>
+        ';
+        $h4_number++;
+      } else if (strpos($item[0], 'h5') !== false) {
+        $temp    = str_replace(['[h5]', '[/h5]'], ['', ''], $item[0]);
+        $replace .= '
+          <li>
+            <div class="fifth-index article-title-link">
+              <div>
+                <a href="#h6' . $h5_number . '" title="' . $temp . '">' . $temp . '</a>
+              </div>
+            </div>
+          </li>
+        ';
+        $h5_number++;
       }
     }
 
@@ -200,34 +227,29 @@ function nicen_theme_navigator()
   } else {
     $replace   = '';
     $h1_number = 1; //h1个数
-
     if (have_posts()) {
       while (have_posts()) {
         the_post();
-
         /*
 				 * 排除不显示的目录文章
 				 * */
         if (!canShow()) {
           continue;
         }
-
         $title = get_the_title();
-
         $replace .= '
           <li>
-            <div class="first-index">
-              <div><a href="#h2' . get_the_ID() . '" title="' . $title . '">' . $h1_number . '. ' . $title . '</a></div>
+            <div class="first-index article-title-link">
+              <div>
+                <a href="#h2' . get_the_ID() . '" title="' . $title . '">' . $h1_number . '. ' . $title . '</a>
+              </div>
             </div>
           </li>
         ';
-
         $h1_number++;
       }
-
       wp_reset_query(); //重置文章指指针
     }
-
     return $replace;
   }
 }
@@ -326,7 +348,7 @@ function nicen_theme_title()
     $category = nicen_theme_getCategory(get_the_ID());
 
     the_title();
-    echo nicen_theme_getCategory(get_the_ID()) == "暂无分类" ? "" : "－" . $category;
+    echo nicen_theme_getCategory(get_the_ID()) === "暂无分类" ? "" : "－" . $category;
     echo "－";
     bloginfo('name');
     /*
@@ -416,6 +438,8 @@ function nicen_theme_create_array($value, $number)
  * */
 function nicen_theme_timeToString($time)
 {
+  // date_default_timezone_set ('ETC/GMT');
+
   $timestamp = strtotime($time);
 
   $day = floor((time() - $timestamp) / 3600 / 24);
@@ -654,7 +678,8 @@ function nicen_theme_og()
 	 * 首页
 	 * */
   if (is_home()) {
-    return sprintf('
+    return sprintf(
+      '
       <meta property="og:type" content="webpage" />
       <meta property="og:url" content="%s" />
       <meta property="og:site_name" content="%s" />
@@ -665,12 +690,12 @@ function nicen_theme_og()
       get_bloginfo('name') . '-' . nicen_theme_config('document_subtitle', false),
       nicen_theme_description(true)
     );
-  }
-  /*
-   * 文章或者页面
-   * */
-  else if (is_singular()) {
-    return sprintf('
+  } else if (is_singular()) {
+    /*
+     * 文章或者页面
+     * */
+    return sprintf(
+      '
       <meta property="og:type" content="article" />
       <meta property="og:url" content="%s" />
       <meta property="og:site_name" content="%s" />
@@ -684,7 +709,8 @@ function nicen_theme_og()
       nicen_theme_description(true)
     );
   } else if (is_category() || is_tag()) {
-    return sprintf('
+    return sprintf(
+      '
       <meta property="og:type" content="webpage" />
       <meta property="og:url" content="%s" />
       <meta property="og:site_name" content="%s" />
@@ -769,7 +795,7 @@ function nicen_theme_getThumbnail()
     if (has_post_thumbnail() && $thumb) {
       return $thumb;
     } else {
-      if ($mode == 1) {
+      if ($mode === 1) {
         return false;
       } else {
         return nicen_theme_getThumb();

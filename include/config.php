@@ -38,7 +38,7 @@
 /*
  * 主题版本
  * */
-const DOCUMENT_VERSION = "1.2.5";
+const DOCUMENT_VERSION = "1.2.8";
 
 const ADMIN = [
   /*菜单设置*/
@@ -349,11 +349,6 @@ const ADMIN = [
             ]
           ],
           [
-            'id'       => 'document_paginate_auto_load_index',
-            'title'    => '动态分页时自动加载',
-            'callback' => 'nicen_theme_form_switch',
-          ],
-          [
             'id'       => 'document_show_sidebar',
             'title'    => '显示右侧边栏',
             'callback' => 'nicen_theme_form_switch',
@@ -378,6 +373,11 @@ const ADMIN = [
             'args'     => [
               'tip' => '点击之后会动态加载指定栏目的文章'
             ]
+          ],
+          [
+            'id'       => 'document_paginate_auto_load_index',
+            'title'    => '动态分页时自动加载',
+            'callback' => 'nicen_theme_form_switch',
           ],
           [
             'id'       => 'document_dynamic_list',
@@ -657,105 +657,103 @@ const ADMIN = [
  * 键=>默认值
  *
  * 初始化在
- * wp-content/themes/nicen_theme/include/functions/theme.php
- *
- * 的documents，reload函数
+ * wp-content/themes/nicen_theme/include/functions/theme.php的documents，reload函数
  * */
 
 define("CONFIG", [
-  "document_tdk"         => 1,
   //显示主题自带的tdk
-  "document_subtitle"    => '与你共享美好生活',
+  "document_tdk"         => 1,
   //主题首页副标题
-  "document_keywords"    => 'desitination主题',
+  "document_subtitle"    => '与你共享美好生活',
   //主题关键字
-  "document_description" => '一款自由的博客主题',
+  "document_keywords"    => 'keywords关键字',
   //主题描述
+  "document_description" => 'description描述',
 
 
-  'document_else_pagination'          => 1,
   //显示分页的类型，默认动态分页
+  'document_else_pagination'          => 1,
   'document_else_show_sidebar'        => 1,
   /* 自动加载下一页 */
-  "document_paginate_auto_load_index" => 1,
   //分类、标签栏目是否显示侧边栏
-  'document_show_else_left_nav'       => 1,
+  "document_paginate_auto_load_index" => 1,
   //栏目文章导航
+  'document_show_else_left_nav'       => 1,
 
-  'document_rewrite_author'        => 'who',
   //作者信息前缀开关
-  'document_rewrite_search'        => 'keyword',
+  'document_rewrite_author'        => 'who',
   //搜索信息前缀开关
-  'document_rewrite_page'          => 'much',
+  'document_rewrite_search'        => 'keyword',
   //分页信息前缀开关
-  'document_rewrite_author_prefix' => 'who',
+  'document_rewrite_page'          => 'much',
   //作者信息前缀
-  'document_rewrite_search_prefix' => 'keyword',
+  'document_rewrite_author_prefix' => 'who',
   //搜索信息前缀
-  'document_rewrite_page_prefix'   => 'much',
+  'document_rewrite_search_prefix' => 'keyword',
   //分页信息前缀
-  'document_show_left_nav'         => 1,
+  'document_rewrite_page_prefix'   => 'much',
   //首页文章导航
-  'document_show_sidebar'          => 1,
+  'document_show_left_nav'         => 1,
   //首页显示侧边栏
-  "document_publish_show"          => '30',
+  'document_show_sidebar'          => 1,
   //发布30天的文章显示日期
+  "document_publish_show"          => '30',
   "document_dynamic"               => 0,
   "document_dynamic_list"          => '',
 
   "document_no_display"              => '',
   "document_paginate_auto_load_else" => 1,
-  "document_pagination"              => 1,
   //显示分页的类型，默认动态分页
-  'document_index_excerpt_number'    => 200,
+  "document_pagination"              => 1,
   //文章摘要字数
+  'document_index_excerpt_number'    => 200,
 
   'document_thumbnail'          => 1,
   "document_thumbnail_position" => "right",
-  'document_thumbnail_default'  => get_theme_root_uri() . '/destination/assets/images/default.png',
-  "document_Gravatar"           => 'gravatar.loli.net/avatar',
+  'document_thumbnail_default'  => get_theme_root_uri() . '/document/assets/images/themes/default.png',
   //默认替换的gavatar源
-  "document_theme_color"        => '#3eaf7c',
-  "document_show_copyright"     => 1,
+  "document_Gravatar"           => 'gravatar.loli.net/avatar',
   //主题色
-  "document_searchnum"          => 1,
+  "document_theme_color"        => '#1890FF',
+  "document_show_copyright"     => 1,
   //显示搜索数量
-  'document_view_add'           => 0,
+  "document_searchnum"          => 1,
   //阅读量增加
-  'document_switch_theme'       => 1,
+  'document_view_add'           => 0,
   //主题色切换
+  'document_switch_theme'       => 1,
 
   //捐赠和版权
   "document_show_donate"        => 1,
   "document_donate_url"         => site_url(),
-  "document_copyright"          => "赠人玫瑰，手有余香",
+  "document_copyright"          => "赠人玫瑰，手有余香。",
 
-  "document_smtp_open"     => 0,
   //是否开启smtp
-  "document_smtp_server"   => '',
+  "document_smtp_open"     => 0,
   //smtp服务器
-  "document_smtp_port"     => '',
+  "document_smtp_server"   => '',
   //服务器端口
-  "document_smtp_protocol" => '',
+  "document_smtp_port"     => '',
   //传输协议
-  "document_smtp_acccount" => '',
+  "document_smtp_protocol" => '',
   //邮件账户
-  "document_smtp_password" => '',
+  "document_smtp_acccount" => '',
   //邮件密码
+  "document_smtp_password" => '',
 
   'document_footer_bg_color'   => 'transparent',
   'document_footer_font_color' => '#262626',
-  "document_footer_tongji"     => '',
   //插入页脚的内容
   "document_footer_extra"      => '<span>基于<a href="https://wordpress.org" target="_blank" rel="nofollow" title="Wordpress">Wordpress.</a> Theme By <a href="https://github.com/friend-nicen/theme-document" title="Document" target="_blank" rel="nofollow">Document.</a> ICP备案号 </span>
-    <a href="https://beian.miit.gov.cn/" title="工信部ICP备案" target="_blank" rel="nofollow" style="color:"> ICP备10086号</a>',
+  <a href="https://beian.miit.gov.cn/" title="工信部ICP备案" target="_blank" rel="nofollow" style="color:"> ICP备10086号</a>',
   //插入页脚的内容
+  "document_footer_tongji"     => '',
 
-  'document_seo_og'                => 0,
-  "document_baidu"                 => '',
+  'document_seo_og'                => 1,
   //百度站长
-  "document_private"               => md5(time()),
+  "document_baidu"                 => '',
   //初次安装时的接口密钥
+  "document_private"               => md5(time()),
 
   /*
 	 * 文章设置
@@ -765,7 +763,7 @@ define("CONFIG", [
   'document_single_show_sidebar'   => 1,
   'document_single_show_bread'     => 1,
   'document_single_show_structrue' => 1,
-  'document_single_show_catalog'   => 0,
+  'document_single_show_catalog'   => 1,
   'document_assiciate_type'        => 1,
   /*
 	 * 页面设置
@@ -786,8 +784,8 @@ define("CONFIG", [
   'document_header_font_color'     => '#262626',
   'document_sub_menu_bg_color'     => '#fff',
   'document_sub_menu_font_color'   => 'rgba(0,0,0,0.65)',
-  "document_logo_url"              => get_theme_root_uri() . '/destination/assets/images/logo.png',
   //主题logo
+  "document_logo_url"              => get_theme_root_uri() . '/document/assets/images/themes/logo.png',
   'document_header_border_color'   => '#e1e1e1',
   'document_header_shadow_color'   => 'hsl(230deg 68% 14% / 1%)',
 ]);

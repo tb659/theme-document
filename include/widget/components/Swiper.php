@@ -64,7 +64,7 @@ class Swiper extends WP_Widget
   {
 ?>
     <div id="jq-tabs">
-      <ul>
+      <ul style="display: flex; justify-content: space-around; margin: 10px;">
         <?php
         for ($i = 0; $i < 3; $i++) {
           echo sprintf('<li><a href="#tabs-%s">%s</a></li>', $i + 1, '栏目' . ($i + 1));
@@ -77,7 +77,7 @@ class Swiper extends WP_Widget
 
     for ($i = 0; $i < 3; $i++) {
 
-      echo '<div id="tabs-' . ($i + 1) . '">';
+      echo '<div id="tabs-' . ($i + 1) . '"><div><b>' . '栏目' . ($i + 1) . '</b></div>';
 
       widget_media($this, $instance, [
         'title'   => '背景图片链接',

@@ -24,7 +24,7 @@ class Recommend extends WP_Widget
   {
     $title  = $this->getValue($instance, 'title', '文章推荐');
     $type   = $this->getValue($instance, 'type', 1); //最新文章
-    $number = $this->getValue($instance, 'number', 5);; //推荐数量
+    $number = $this->getValue($instance, 'number', 10);; //推荐数量
     $show_title = $this->getValue($instance, 'show_title', 1);; //显示标题
     include get_template_directory() . '/template/widget/recommend.php'; //推荐
   }
@@ -82,7 +82,7 @@ class Recommend extends WP_Widget
       'title'   => '推荐数量',
       'type'    => 'number',
       'field'   => 'number',
-      'default' => 5
+      'default' => 10
     ]);
 
     widget_select(
