@@ -9,11 +9,8 @@ function nicen_theme_load_source()
   $root = get_template_directory(); //主题路径
   $url  = get_template_directory_uri(); //主题url
 
-  /* 底部推荐区域 */
-  if (is_active_sidebar('content_down')) {
-    wp_enqueue_script('swiper', 'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/Swiper/8.0.6/swiper-bundle.js', false);
-    wp_enqueue_style('swiper-styles', 'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/Swiper/8.0.6/swiper-bundle.css');
-  }
+  /* iconify图标 */
+  wp_enqueue_script('iconify', 'https://kit.fontawesome.com/6c6ff53c7c.js', false);
 
   /*主题的JS*/
   wp_enqueue_script('jquerys', 'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js', false);
@@ -30,6 +27,12 @@ function nicen_theme_load_source()
 	 * 去除无用的css
 	 * */
   wp_dequeue_style('wp-block-library');
+
+  /* 底部推荐区域 */
+  if (is_active_sidebar('content_down')) {
+    wp_enqueue_script('swiper', 'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/Swiper/8.0.6/swiper-bundle.js', false);
+    wp_enqueue_style('swiper-styles', 'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/Swiper/8.0.6/swiper-bundle.css');
+  }
 
   /*
 	 * 是否显示文章目录

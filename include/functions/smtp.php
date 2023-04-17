@@ -5,21 +5,21 @@
  * */
 function nicen_theme_mail_smtp($phpmailer)
 {
-  global $desination_configs;
+  global $document_configs;
 
   /*
 	 * 如果打开了smtp
 	 * */
-  if ($desination_configs['document_smtp_open']) {
+  if ($document_configs['document_smtp_open']) {
     $phpmailer->isSMTP();
     $phpmailer->SMTPAuth   = true;
     $phpmailer->CharSet    = "utf-8";
-    $phpmailer->SMTPSecure = $desination_configs['document_smtp_protocol'];
-    $phpmailer->Port       = $desination_configs['document_smtp_port'];
-    $phpmailer->Host       = $desination_configs['document_smtp_server'];
-    $phpmailer->Username   = $desination_configs['document_smtp_acccount'];
-    $phpmailer->Password   = $desination_configs['document_smtp_password'];
-    $phpmailer->setFrom($desination_configs['document_smtp_acccount'], get_option('blogname'));
+    $phpmailer->SMTPSecure = $document_configs['document_smtp_protocol'];
+    $phpmailer->Port       = $document_configs['document_smtp_port'];
+    $phpmailer->Host       = $document_configs['document_smtp_server'];
+    $phpmailer->Username   = $document_configs['document_smtp_acccount'];
+    $phpmailer->Password   = $document_configs['document_smtp_password'];
+    $phpmailer->setFrom($document_configs['document_smtp_acccount'], get_option('blogname'));
   }
 }
 
@@ -54,9 +54,9 @@ add_action('wp_mail_succeeded', 'nicen_theme_wp_mail_successed', 10, 1);
 
 function nicen_theme_comment_approved($comment)
 {
-  global $desination_configs;
+  global $document_configs;
   if (is_email($comment->comment_author_email)) {
-    $wp_email = $desination_configs['document_smtp_acccount'];
+    $wp_email = $document_configs['document_smtp_acccount'];
     $to       = trim($comment->comment_author_email);
 
     $post_link = get_permalink($comment->comment_post_ID);
@@ -107,13 +107,13 @@ add_action('comment_unapproved_to_approved', 'nicen_theme_comment_approved');
 
 function nicen_theme_comment_notify($comment_id)
 {
-  global $desination_configs;
+  global $document_configs;
   $comment        = get_comment($comment_id);
   $parent_id      = $comment->comment_parent ? $comment->comment_parent : '';
   $spam_confirmed = $comment->comment_approved;
 
   if (($parent_id !== '') && ($spam_confirmed === '1')) {
-    $wp_email = $desination_configs['document_smtp_acccount'];
+    $wp_email = $document_configs['document_smtp_acccount'];
     $to      = trim(get_comment($parent_id)->comment_author_email);
     $subject = '[通知]您的留言有了新的回复';
     $message = '

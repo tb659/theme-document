@@ -42,19 +42,27 @@ if (nicen_theme_showInfo()) {
         </a>
       </li>
       <li>
-        <i class="iconfont icon-shijian"></i>
+        <i class="fa-regular fa-clock"></i>
         <?php echo nicen_theme_timeToString(get_gmt_from_date(get_the_time("Y-m-d H:i:s"))); ?>
       </li>
       <li>
-        <i class="iconfont icon-icon-test"></i>
+        <i class="fa-solid fa-fire"></i>
         <?php echo nicen_theme_getPostViews(get_the_ID()); ?>
         热度
       </li>
       <li style="border:none">
-        <i class="iconfont icon-pinglun"></i>
+        <i class="fa-regular fa-comment-dots"></i>
         <?php echo get_comments_number(); ?>
         评论
       </li>
+      <?php if (get_edit_post_link() != null) { ?>
+        <li style="border:none">
+          <i class="fa-regular fa-pen-to-square"></i>
+          <a href="<?php echo get_edit_post_link(); ?>">
+            编辑
+          </a>
+        </li>
+      <?php } ?>
     </ul>
   </div>
 <?php

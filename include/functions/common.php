@@ -9,7 +9,7 @@
 /*
  * 主题选项
  * */
-$desination_configs = [];
+$document_configs = [];
 
 /*
  * 输出主题选项
@@ -17,11 +17,11 @@ $desination_configs = [];
  * */
 function nicen_theme_config($index, $echo = true)
 {
-  global $desination_configs;
+  global $document_configs;
   if ($echo) {
-    echo $desination_configs[$index];
+    echo $document_configs[$index];
   } else {
-    return $desination_configs[$index];
+    return $document_configs[$index];
   }
 }
 
@@ -30,13 +30,13 @@ function nicen_theme_config($index, $echo = true)
  * */
 function nicen_theme_reload()
 {
-  global $desination_configs;
+  global $document_configs;
 
   /*
 	 * 遍历整个配置
 	 * */
   foreach (CONFIG as $key => $value) {
-    $desination_configs[$key] = get_option($key);
+    $document_configs[$key] = get_option($key);
   }
 }
 
@@ -901,4 +901,58 @@ function get_copyright()
   }
 
   return $copyright;
+}
+
+function isLogin()
+{
+  return is_user_logged_in();
+}
+
+function loginAndBack($url = null)
+{
+  if ($url == null) {
+    return wp_login_url('//' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+  } else {
+    return wp_login_url($url);
+  }
+}
+
+function isAdmin($user_id = null)
+{
+  if ($user_id == null) {
+    $currentUser = wp_get_current_user();
+    $roles = $currentUser->roles;
+  } else {
+    $user = get_userdata($user_id);
+    $roles = $user->roles;
+  }
+
+  if (!empty($roles) && in_array('administrator', $roles)) {
+    return true;
+  } else {
+    return false;  // 非管理员
+  }
+}
+
+function corepress_get_avatar_url($email = null, $size = 60)
+{
+  if ($email == null) {
+    $currentUser = wp_get_current_user();
+    $avatarurl = get_avatar_url($currentUser->user_email, array('size' => $size));
+  } else {
+    $avatarurl = get_avatar_url($email, array('size' => $size));
+  }
+  return $avatarurl;
+}
+
+function corepress_get_user_nickname($user_id = null)
+{
+  if ($user_id == null) {
+    $currentUser = wp_get_current_user();
+    $name = $currentUser->display_name;
+  } else {
+    $user = get_userdata($user_id);
+    $name = $user->display_name;
+  }
+  return $name;
 }

@@ -10,7 +10,7 @@
 /*
  * 注册菜单
  * */
-register_nav_menus(['top-leval' => '顶部导航']);
+register_nav_menus(['top-menu' => '顶部导航']);
 
 /*
  * 关闭登陆后前台显示工具栏

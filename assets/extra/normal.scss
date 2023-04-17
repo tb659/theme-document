@@ -140,38 +140,12 @@ html {
           /*
             阅读模式图标
           */
-          .read-mode .iconfont {
+          .read-mode i {
             color: inherit;
             font-size: var(--theme-text);
-          }
-
-          /*
-            如果拥有子菜单
-          */
-          .menu-item-has-children {
-            & > a {
-              font-family: "iconfont" !important;
-              font-style: normal;
-              -webkit-font-smoothing: antialiased;
-              -moz-osx-font-smoothing: grayscale;
-
-              &:after {
-                font-size: 10px;
-                display: inline-flex;
-                margin: 0 3px;
-                transform: rotate(180deg);
-                transition: all 0.2s linear;
-                content: "\e652";
-              }
-            }
-
-            &:hover {
-              & > a {
-                &:after {
-                  transform: rotate(360deg);
-                }
-              }
-            }
+            width: 22px;
+            display: inline-block;
+            font-size: 20px;
           }
 
           .menu-item {
@@ -183,8 +157,21 @@ html {
             cursor: pointer;
             font-size: var(--theme-text);
             color: var(--theme-header-font-color);
-
             white-space: nowrap;
+
+            a {
+              display: flex;
+              align-items: center;
+
+              img {
+                width: 20px;
+                height: 20px;
+                padding-right: 0px;
+              }
+              .menu-image-title {
+                padding-left: 4px;
+              }
+            }
 
             &:hover {
               & > .sub-menu {
@@ -192,7 +179,8 @@ html {
                 opacity: 1;
               }
 
-              & > a {
+              & > a,
+              & > a .menu-image-title {
                 color: var(--theme-color);
               }
 
@@ -202,7 +190,7 @@ html {
             }
 
             .sub-menu {
-              display: block;
+              // display: none;
               visibility: hidden;
               opacity: 0;
               position: absolute;
@@ -210,10 +198,10 @@ html {
               box-shadow: 0 12px 32px var(--theme-hover-shadow), 0 2px 6px var(--theme-hover-shadow);
               margin: 0;
               padding: 0.5rem 0;
-              border-radius: 0.45rem;
-              transition: all 0.25s;
-              top: 66px;
-              left: -1.2rem;
+              border-radius: 0.2rem;
+              transition: all 0.5s;
+              top: 60px;
+              left: 0rem;
               list-style: none;
 
               .menu-item {
@@ -221,6 +209,9 @@ html {
                 color: var(--theme-sub-menu-font-color);
                 padding: 3px 1.2rem;
 
+                & > a:after {
+                  right: 0.4rem;
+                }
                 &:hover {
                   & > a {
                     color: var(--theme-color) !important;
@@ -230,7 +221,38 @@ html {
 
               .sub-menu {
                 top: 0;
-                left: 105%;
+                left: 100%;
+              }
+            }
+          }
+          /*
+            如果拥有子菜单
+          */
+          .menu-item-has-children {
+            & > a {
+              padding-right: 0.5rem;
+              font-family: "iconfont" !important;
+              font-style: normal;
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
+
+              &:after {
+                font-size: 20px;
+                display: inline-flex;
+                margin: 0 3px;
+                transform: rotate(90deg);
+                transition: all 0.2s linear;
+                content: "\e652";
+                position: absolute;
+                right: -0.6rem;
+              }
+            }
+
+            &:hover {
+              & > a {
+                &:after {
+                  transform: rotate(180deg);
+                }
               }
             }
           }
@@ -2437,6 +2459,100 @@ html {
         */
         .hasDynamic {
           padding-top: 0;
+        }
+      }
+    }
+  }
+}
+
+.user-menu-plane {
+  .user-menu-main-notlogin {
+    padding-left: 20px;
+
+    &:hover {
+      color: var(--theme-color);
+    }
+  }
+
+  .user-menu {
+    margin: 0;
+
+    .menu-item {
+      list-style: none;
+      cursor: pointer;
+      text-align: center;
+      line-height: 2.2;
+
+      & > .user-menu-main {
+        display: flex;
+        align-items: center;
+        font-family: "iconfont" !important;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        &:after {
+          font-size: 20px;
+          display: inline-flex;
+          margin: 0 3px;
+          transform: rotate(90deg);
+          transition: all 0.2s linear;
+          content: "\e652";
+        }
+
+        .user-avatar {
+          margin-right: 10px;
+          border-radius: 50%;
+        }
+
+        .user-menu-name {
+          font-size: 1rem;
+        }
+      }
+
+      &:hover {
+        .sub-menu {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+
+      .user-sub-menu {
+        position: absolute;
+        top: 60px !important;
+        visibility: hidden;
+        opacity: 0;
+        display: block;
+        background: var(--theme-sub-menu-bg-color);
+        box-shadow: 0 12px 32px var(--theme-hover-shadow), 0 2px 6px var(--theme-hover-shadow);
+        margin: 0;
+        padding: 0.5rem;
+        border-radius: 0.2rem;
+        transition: all 0.5s;
+        list-style: none;
+        min-width: 6rem;
+
+        .menu-item {
+          &:hover {
+            & > a {
+              color: var(--theme-color) !important;
+            }
+          }
+        }
+      }
+    }
+
+    .menu-item-has-children {
+      padding: 14px 0;
+      &:hover {
+        .user-menu-name {
+          color: var(--theme-color);
+        }
+        & > a {
+          &:after {
+            color: var(--theme-color);
+            transform: rotate(180deg);
+          }
         }
       }
     }

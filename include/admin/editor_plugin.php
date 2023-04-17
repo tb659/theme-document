@@ -16,9 +16,9 @@ function nicen_theme_admin_init()
   remove_action('wp_enqueue_scripts', 'wp_common_block_scripts_and_styles');
 
   //不进行权限判断
-  /*if ( ! current_user_can( 'edit_posts' ) && ! current_user_can( 'edit_pages' ) ) {
+  if ( ! current_user_can( 'edit_posts' ) && ! current_user_can( 'edit_pages' ) ) {
         return;
-    }*/
+    }
 
   //判断用户是否使用可视化编辑器
   if (get_user_option('rich_editing') === 'true') {

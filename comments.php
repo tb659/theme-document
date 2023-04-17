@@ -57,7 +57,6 @@ if (nicen_theme_showComments()) {
             <?php if ($comment) {
               cancel_comment_reply_link('取消回复');
             } ?>
-            <a style="display: <?php echo $isLogin ? 'block' : 'none' ?>" title="注销登录" href="<?php echo wp_logout_url(apply_filters('the_permalink', get_permalink(), '')); ?>">注销登录</a>
           </div>
         </div>
         <div class="comment-form-main">

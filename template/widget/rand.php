@@ -70,7 +70,7 @@ global $table_prefix, $wpdb;
                   ' . get_the_title() . '
                 </div>
                 <div class="datetime">
-                  ' . nicen_theme_timeToString(get_the_time("Y-m-d H:i:s")) . '
+                  ' . nicen_theme_timeToString(get_gmt_from_date(get_the_time("Y-m-d H:i:s"))) . '
                 </div>
               </div>
             </a>

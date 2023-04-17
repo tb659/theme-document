@@ -30,7 +30,7 @@
           position: fixed;
 
           top: 0;
-          left: -70%;
+          left: -60%;
           width: 60%;
           background: var(--theme-sub-menu-bg-color);
           padding: 1rem 0.7rem 1rem 0.7rem;
@@ -59,6 +59,7 @@
             .search-div {
               display: flex;
               width: 100%;
+              padding-left: 2.2rem;
 
               .iconfont {
                 display: none;
@@ -69,7 +70,7 @@
                 width: 100%;
                 flex-shrink: 0;
                 padding: 0 1rem 0 0.6rem;
-                color: var(--theme-sub-menu-font-color);
+                color: var(--theme-text-color);
               }
             }
 
@@ -77,69 +78,182 @@
               height: unset;
               margin-right: 0.2rem;
               line-height: normal;
-              color: var(--theme-sub-menu-font-color);
+              color: var(--theme-text-color);
             }
           }
 
-          .menu {
+          .mobile-menu {
+            margin: 0;
+            display: flex;
+            align-items: center;
             align-content: center;
             flex-direction: column;
             align-items: flex-start;
-            padding: 0;
             width: 100%;
-            height: unset;
+            margin: 0;
+            padding: 0;
+            list-style: none;
 
             .menu-item {
+              position: relative;
               width: 100%;
               margin: 0;
               box-sizing: border-box;
-              padding: 0.5rem 1rem;
-              color: var(--theme-sub-menu-font-color);
-              justify-content: space-between;
+              padding: 0.5rem 0 0.5rem 0.5rem;
+              color: var(--theme-text-color);
               font-weight: lighter;
               flex-wrap: wrap;
               font-size: var(--theme-third-level-title);
-
               border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+              cursor: pointer;
+              white-space: nowrap;
+              list-style: none;
 
-              i {
-                line-height: normal;
-              }
+              a {
+                display: flex;
+                align-items: center;
 
-              span {
-                font-size: 1rem;
+                img {
+                  width: 20px;
+                  height: 20px;
+                  padding-right: 0px;
+                }
+                .menu-image-title {
+                  padding-left: 4px;
+                }
               }
             }
-
             /*
-              如果拥有子菜单
-            */
+            如果拥有子菜单
+          */
             .menu-item-has-children {
               & > a {
+                display: block;
+                width: 100%;
+                font-family: "iconfont" !important;
+                font-style: normal;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+
                 &:after {
-                  display: none;
+                  font-size: 20px;
+                  display: inline-flex;
+                  margin: 0 3px;
+                  transform: rotate(90deg);
+                  transition: all 0.2s linear;
+                  content: "\e652";
+                  position: absolute;
+                  right: 0;
+                  top: 7px;
                 }
               }
 
               .sub-menu {
                 display: none;
+                padding-left: 0.5rem;
+              }
+              &.show {
+                & > a {
+                  color: var(--theme-color);
+
+                  &:after {
+                    transform: rotate(180deg);
+                    color: var(--theme-color);
+                  }
+                }
               }
             }
 
             .read-mode {
               position: absolute !important;
-              display: none;
-              top: 1rem;
+              top: 1.5rem;
               z-index: 50;
-              right: 12px;
               margin-top: 0;
               height: fit-content;
               width: fit-content;
               color: var(--theme-front-color);
+              border-bottom: none;
 
               img {
                 width: 1.2rem;
                 padding: 0;
+              }
+            }
+          }
+
+          /* 导航个人中心 */
+          .mobile-user-menu-plane {
+            width: 100%;
+
+            .user-menu-main-notlogin {
+              width: 100%;
+              margin: 0;
+              box-sizing: border-box;
+              padding: 0.5rem 1rem;
+              color: var(--theme-text-color);
+              justify-content: space-between;
+              font-weight: lighter;
+              flex-wrap: wrap;
+              font-size: var(--theme-third-level-title);
+              border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            }
+
+            .user-menu {
+              padding: 0;
+
+              .menu-item {
+                list-style: none;
+                cursor: pointer;
+                line-height: 2.2;
+
+                .user-menu-main {
+                  display: flex;
+                  align-items: center;
+                  font-family: "iconfont" !important;
+                  font-style: normal;
+                  -webkit-font-smoothing: antialiased;
+                  -moz-osx-font-smoothing: grayscale;
+
+                  &:after {
+                    position: absolute;
+                    right: 6px;
+                    font-size: 20px;
+                    display: inline-flex;
+                    margin: 0 3px;
+                    transform: rotate(90deg);
+                    transition: all 0.2s linear;
+                    content: "\e652";
+                  }
+
+                  .user-avatar {
+                    margin-right: 10px;
+                    border-radius: 50%;
+                  }
+
+                  .user-menu-name {
+                    font-size: 1rem;
+                  }
+                }
+
+                &.show {
+                  & > a {
+                    .user-menu-name {
+                      color: var(--theme-color);
+                    }
+
+                    &:after {
+                      transform: rotate(180deg);
+                      color: var(--theme-color);
+                    }
+                  }
+                }
+
+                .user-sub-menu {
+                  display: none;
+                  width: 100%;
+                  padding: 10px 0.5rem;
+                  padding-left: 0 !important;
+                }
               }
             }
           }

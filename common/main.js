@@ -62,11 +62,7 @@ $(function () {
      * 阅读模式切换（白天、黑暗）
      * */
     $(".read-mode").click(function () {
-      if ($(this).find("i").hasClass("icon-yueliang")) {
-        toggleTheme(false); //切换白天模式
-      } else {
-        toggleTheme(true); //切换暗黑模式
-      }
+      toggleTheme($(this).find("i").hasClass("fa-sun"));
     });
   })();
 
@@ -126,7 +122,22 @@ $(function () {
    * */
   (function () {
     let navWidth = "60%";
+    const isMobile = $(window).width() <= 1024;
+    setMenuClass(isMobile);
 
+    function setMenuClass(mobile) {
+      if (mobile) {
+        $(".main-header .menu-nav").addClass("mobile-menu").removeClass("menu");
+        $(".main-header .user-menu-wrap")
+          .addClass("mobile-user-menu-plane")
+          .removeClass("user-menu-plane");
+      } else {
+        $(".main-header .menu-nav").addClass("menu").removeClass("mobile-menu");
+        $(".main-header .user-menu-wrap")
+          .addClass("user-menu-plane")
+          .removeClass("mobile-user-menu-plane");
+      }
+    }
     /*
      * 展开导航
      * */
@@ -145,13 +156,33 @@ $(function () {
       }
     }
 
+    let firstClick = null;
+    function toggleExpandMenu(event) {
+      const now = Date.now();
+      if (!firstClick || now - firstClick >= 300) {
+        firstClick = now;
+        if ($(this).parent().hasClass("menu-item-has-children")) {
+          event.preventDefault();
+          if ($(this).next().css("display") === "none") {
+            $(this).next().show(200).parent().addClass("show");
+          } else {
+            $(this).next().hide(200).parent().removeClass("show");
+          }
+        }
+      }
+    }
     enquire.register("screen and (max-width: 1024px)", {
       match() {
+        $(".main-header .menu").attr("mobile", "is");
         $(".daohang").on("click", expandNav);
+        $(".menu-item a").on("click", toggleExpandMenu);
+        setMenuClass(true);
       },
       /*屏幕大于1024时取消监听屏幕大小*/
       unmatch() {
+        $(".main-header .menu").attr("mobile", "not");
         $(".daohang").off("click", expandNav);
+        setMenuClass(false);
       }
     });
   })();

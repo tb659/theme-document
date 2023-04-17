@@ -19,18 +19,6 @@
                 label: "选择语言",
                 values: [
                   {
-                    text: "markup",
-                    value: "markup"
-                  },
-                  {
-                    text: "css",
-                    value: "css"
-                  },
-                  {
-                    text: "javascript",
-                    value: "javascript"
-                  },
-                  {
                     text: "bash",
                     value: "bash"
                   },
@@ -39,12 +27,16 @@
                     value: "c"
                   },
                   {
-                    text: "csharp",
-                    value: "csharp"
+                    text: "c#",
+                    value: "c#"
                   },
                   {
-                    text: "cpp",
-                    value: "cpp"
+                    text: "c++",
+                    value: "c++"
+                  },
+                  {
+                    text: "css",
+                    value: "css"
                   },
                   {
                     text: "css-extras",
@@ -55,12 +47,16 @@
                     value: "docker"
                   },
                   {
+                    text: "go",
+                    value: "go"
+                  },
+                  {
                     text: "git",
                     value: "git"
                   },
                   {
-                    text: "go",
-                    value: "go"
+                    text: "html",
+                    value: "html"
                   },
                   {
                     text: "http",
@@ -71,16 +67,12 @@
                     value: "icon"
                   },
                   {
-                    text: "ini",
-                    value: "ini"
-                  },
-                  {
                     text: "java",
                     value: "java"
                   },
                   {
-                    text: "javadoclike",
-                    value: "javadoclike"
+                    text: "javascript",
+                    value: "javascript"
                   },
                   {
                     text: "jq",
@@ -91,20 +83,16 @@
                     value: "js-extras"
                   },
                   {
-                    text: "json",
-                    value: "json"
-                  },
-                  {
                     text: "json5",
                     value: "json5"
                   },
                   {
-                    text: "markdown",
-                    value: "markdown"
+                    text: "json",
+                    value: "json"
                   },
                   {
-                    text: "markup-templating",
-                    value: "markup-templating"
+                    text: "markdown",
+                    value: "markdown"
                   },
                   {
                     text: "nginx",
@@ -131,16 +119,16 @@
                     value: "python"
                   },
                   {
+                    text: "redis",
+                    value: "redis"
+                  },
+                  {
+                    text: "ruby",
+                    value: "ruby"
+                  },
+                  {
                     text: "sql",
                     value: "sql"
-                  },
-                  {
-                    text: "typescript",
-                    value: "typescript"
-                  },
-                  {
-                    text: "visual-basic",
-                    value: "visual-basic"
                   }
                 ]
               },

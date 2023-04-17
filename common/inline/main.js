@@ -1,31 +1,23 @@
 /*
  * 切换主题皮肤
  * */
-function toggleTheme(flag = true) {
+function toggleTheme(flag) {
   if (flag) {
-    //暗黑主题
-    $("html").addClass("dark");
-    //白天主题
-    $("html").removeClass("personal");
+    $("html").addClass("dark").removeClass("personal");
     //标记暗黑模式
     localStorage.setItem("night", 1);
     //改变图标
-    $(function () {
-      $(".read-mode i").removeClass("icon-baitian-qing");
-      $(".read-mode i").addClass("icon-yueliang");
-    });
+    $(function() {
+      $(".read-mode i").css("color", "#fff").removeClass("fa-sun").addClass("fa-moon");
+    })
   } else {
-    //暗黑主题
-    $("html").removeClass("dark");
-    //白天主题
-    $("html").addClass("personal");
+    $("html").removeClass("dark").addClass("personal");
     //移除暗黑模式标记
     localStorage.removeItem("night");
     //改变图标
     $(function () {
-      $(".read-mode i").removeClass("icon-yueliang");
-      $(".read-mode i").addClass("icon-baitian-qing");
-    });
+      $(".read-mode i").css("color", "#000").removeClass("fa-moon").addClass("fa-sun");
+    })
   }
 }
 
@@ -51,7 +43,7 @@ let night = localStorage.getItem("night");
 /*
  * 是否需要切换模式
  * */
-if (!!night) {
+if (night) {
   toggleTheme(true); //切换暗黑
 }
 
