@@ -34,8 +34,8 @@ Tags: 文档,自适应,主题切换,阅读进度跟随
   --theme-black-text: #333;
   --theme-white: #f5f7fd;
   --theme-black: #333;
-  --theme-color: #3eaf7c;
-  --theme-color-20: rgba(66, 185, 131, 0.2);
+  --theme-color: #1890ff;
+  --theme-color-20: rgba(51, 158, 201, 0.2);
   --theme-text-color: #262626;
   --theme-text-second: rgba(0, 0, 0, 0.65);
   --theme-text-mini-color: rgba(0, 0, 0, 0.65);
@@ -403,6 +403,13 @@ html body .main-header .right .menu .menu-item a img {
 
 html body .main-header .right .menu .menu-item a .menu-image-title {
   padding-left: 4px;
+}
+
+html body .main-header .right .menu .menu-item a i {
+  display: inline;
+  font-size: 18px;
+  margin-right: 6px;
+  margin-top: -1px;
 }
 
 html body .main-header .right .menu .menu-item:hover > .sub-menu {
@@ -2672,6 +2679,7 @@ html body .index .main-main .hasDynamic {
 }
 
 .user-menu-plane .user-menu .menu-item > .user-menu-main {
+  width: 5rem;
   display: flex;
   align-items: center;
   font-family: "iconfont" !important;
