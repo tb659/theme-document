@@ -3066,6 +3066,9 @@ html body .index .main-main .hasDynamic {
     display: flex;
     align-items: center;
   }
+  html body .main-header .right .mobile-menu .menu-item a i {
+    margin-right: 6px;
+  }
   html body .main-header .right .mobile-menu .menu-item a img {
     width: 20px;
     height: 20px;
