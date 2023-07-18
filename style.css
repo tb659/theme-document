@@ -34,8 +34,8 @@ Tags: 文档,自适应,主题切换,阅读进度跟随
   --theme-black-text: #333;
   --theme-white: #f5f7fd;
   --theme-black: #333;
-  --theme-color: #3eaf7c;
-  --theme-color-20: rgba(66, 185, 131, 0.2);
+  --theme-color: #1890ff;
+  --theme-color-20: rgba(51, 158, 201, 0.2);
   --theme-text-color: #262626;
   --theme-text-second: rgba(0, 0, 0, 0.65);
   --theme-text-mini-color: rgba(0, 0, 0, 0.65);
@@ -212,6 +212,13 @@ p {
 .main-container .swiper-button-next,
 .main-container .swiper-button-prev {
   pointer-events: auto !important;
+}
+
+/*
+  管理页面message提示样式调整
+*/
+.ant-message {
+  z-index: 9999;
 }
 
 /*正常的所有样式*/
@@ -403,6 +410,13 @@ html body .main-header .right .menu .menu-item a img {
 
 html body .main-header .right .menu .menu-item a .menu-image-title {
   padding-left: 4px;
+}
+
+html body .main-header .right .menu .menu-item a i {
+  display: inline;
+  font-size: 18px;
+  margin-right: 6px;
+  margin-top: -1px;
 }
 
 html body .main-header .right .menu .menu-item:hover > .sub-menu {
@@ -2672,6 +2686,7 @@ html body .index .main-main .hasDynamic {
 }
 
 .user-menu-plane .user-menu .menu-item > .user-menu-main {
+  width: 5rem;
   display: flex;
   align-items: center;
   font-family: "iconfont" !important;
@@ -3058,6 +3073,9 @@ html body .index .main-main .hasDynamic {
     display: flex;
     align-items: center;
   }
+  html body .main-header .right .mobile-menu .menu-item a i {
+    margin-right: 6px;
+  }
   html body .main-header .right .mobile-menu .menu-item a img {
     width: 20px;
     height: 20px;
@@ -3229,8 +3247,8 @@ html body .index .main-main .hasDynamic {
 
 /*手机*/
 /*
-  手机
-*/
+    手机
+  */
 @media (max-width: 480px) {
   :root {
     --theme-first-level-title: 1.25rem;
@@ -3252,8 +3270,8 @@ html body .index .main-main .hasDynamic {
   }
   html body {
     /*
-        如果有动态页面加载
-      */
+          如果有动态页面加载
+        */
     /*评论区*/
   }
   html body h1 {
@@ -3330,6 +3348,17 @@ html body .index .main-main .hasDynamic {
   html body .main-container #fixed {
     display: none;
   }
+  html body .index .main-main .swiper {
+    background-color: #fff;
+    padding: 10px;
+  }
+  html body .index .main-main .swiper .swiper-a {
+    height: auto;
+  }
+  html body .index .main-main .swiper .swiper-b,
+  html body .index .main-main .swiper .swiper-c {
+    height: auto;
+  }
   html body .index .main-main .main-content {
     padding: 1rem 0.9rem 0 0.9rem;
   }
@@ -3348,8 +3377,8 @@ html body .index .main-main .hasDynamic {
     width: 30%;
     margin-left: 0.5rem;
     /*
-              缩略图最小高度
-            */
+                缩略图最小高度
+              */
   }
   html body .index .main-main .main-content .i-article .i-article-thumb a {
     display: flex;

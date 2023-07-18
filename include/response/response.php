@@ -61,19 +61,29 @@ if (isset($_GET['submit'])) {
 
   $token = get_option("document_baidu");
 
+  $site = get_option("document_baidu_site");
+
   /*
 	 * 检查token
 	 * */
   if (empty($token)) {
     exit(json_encode([
       'code'   => 0,
-      'result' => "token尚未填写，无法进行推送！"
+      'result' => "token尚未填写，无法进行推送！请先保存"
     ]));
   }
 
-  $site_url = site_url(); //获取站点url
+  /*
+	 * 检查站点
+	 * */
+  if (empty($site)) {
+    exit(json_encode([
+      'code'   => 0,
+      'result' => "站点尚未填写，无法进行推送！请先保存"
+    ]));
+  }
 
-  $api = 'http://data.zz.baidu.com/urls?site=' . $site_url . '&token=' . $token;
+  $api = 'http://data.zz.baidu.com/urls?site=' . $site . '&token=' . $token;
 
   /*
    * 请求头模拟

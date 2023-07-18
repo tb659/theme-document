@@ -171,6 +171,13 @@ html {
               .menu-image-title {
                 padding-left: 4px;
               }
+
+              i {
+                display: inline;
+                font-size: 18px;
+                margin-right: 6px;
+                margin-top: -1px;
+              }
             }
 
             &:hover {
@@ -2484,6 +2491,7 @@ html {
       line-height: 2.2;
 
       & > .user-menu-main {
+        width: 5rem;
         display: flex;
         align-items: center;
         font-family: "iconfont" !important;

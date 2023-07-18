@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*
-  手机
-*/
+    手机
+  */
 @media (max-width: 480px) {
   :root {
     --theme-first-level-title: 1.25rem;
@@ -23,8 +23,8 @@
   }
   html body {
     /*
-        如果有动态页面加载
-      */
+          如果有动态页面加载
+        */
     /*评论区*/
   }
   html body h1 {
@@ -101,6 +101,17 @@
   html body .main-container #fixed {
     display: none;
   }
+  html body .index .main-main .swiper {
+    background-color: #fff;
+    padding: 10px;
+  }
+  html body .index .main-main .swiper .swiper-a {
+    height: auto;
+  }
+  html body .index .main-main .swiper .swiper-b,
+  html body .index .main-main .swiper .swiper-c {
+    height: auto;
+  }
   html body .index .main-main .main-content {
     padding: 1rem 0.9rem 0 0.9rem;
   }
@@ -119,8 +130,8 @@
     width: 30%;
     margin-left: 0.5rem;
     /*
-              缩略图最小高度
-            */
+                缩略图最小高度
+              */
   }
   html body .index .main-main .main-content .i-article .i-article-thumb a {
     display: flex;

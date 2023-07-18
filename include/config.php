@@ -634,6 +634,11 @@ const ADMIN = [
             'callback' => 'nicen_theme_form_input',
           ],
           [
+            'id'       => 'document_baidu_site',
+            'title'    => '百度站长推送站点site',
+            'callback' => 'nicen_theme_form_input',
+          ],
+          [
             'id'       => 'document_seo_og',
             'title'    => '显示og协议元数据',
             'callback' => 'nicen_theme_form_switch',
@@ -752,6 +757,8 @@ define("CONFIG", [
   'document_seo_og'                => 1,
   //百度站长
   "document_baidu"                 => '',
+  //百度站长推送站点
+  "document_baidu_site"            => '',
   //初次安装时的接口密钥
   "document_private"               => md5(time()),
 
