@@ -99,7 +99,7 @@ class Rand extends WP_Widget
       [
         'title'   => '显示缩略图',
         'field'   => 'show',
-        'default' => '1'  
+        'default' => '1'
       ],
       [
         '1' => '显示缩略图',

@@ -18,10 +18,6 @@ if (nicen_theme_config('document_thumbnail_position', false) === "right") {
   $position = "style='order:2;'"; //默认为空
   $cate_pos = "category-left";
 }
-?>
-
-<!--  文章  -->
-<div id="default" class="article-list">
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
       <?php
       /*
@@ -35,10 +31,6 @@ if (nicen_theme_config('document_thumbnail_position', false) === "right") {
         <div class="i-article-summary" <?php echo $position ?>>
           <h2 id="<?php echo $prefix; ?>h2<?php echo get_the_ID(); ?>" class="i-article-title">
             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-          </h2>
-          <div class="i-article-excerpt"><?php nicen_theme_getExcerpt(get_the_excerpt(), $post->post_password); ?></div>
-          <div class="i-article-info">
-            <ul>
               <?php
               $author   = get_the_author_meta('display_name', $post->post_author);  //获取作者名字
               $category = nicen_theme_getCategory(get_the_ID()); //获取文章分类
